@@ -1,6 +1,6 @@
 {
   "name": "sf-rn-slider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "High performant Range slider for Android and iOS ⚡️",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
