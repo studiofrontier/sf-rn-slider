@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 import {
-  Text,
   View,
-  Image,
   FlatList,
   type NativeSyntheticEvent,
   type NativeScrollEvent,
