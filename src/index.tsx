@@ -21,7 +21,7 @@ interface Props {
   setScrollBack?: (arg1: boolean) => void;
 }
 
-const RangeSlider = ({
+export const TickerSlider = ({
   setRangeValue,
   maxOffset,
   initialScrollOffset,
@@ -175,5 +175,3 @@ const RangeSlider = ({
     </View>
   );
 };
-
-export default RangeSlider;
