@@ -160,17 +160,6 @@ export const TickerSlider = ({
             />
           </MaskedView>
         </View>
-        <View style={Styles.bottomContainer}>
-          <Image
-            source={require('../../assets/icons/arrow-back.png')}
-            style={Styles.bottomIcon}
-          />
-          <Text style={Styles.bottomText}>Start sliding</Text>
-          <Image
-            source={require('../../assets/icons/arrow-right.png')}
-            style={Styles.bottomIcon}
-          />
-        </View>
       </View>
     </View>
   );
