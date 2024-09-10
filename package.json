@@ -1,6 +1,6 @@
 {
   "name": "sf-rn-slider",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "High performant Range slider for Android and iOS ⚡️",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -53,7 +53,7 @@
     "type": "git",
     "url": "git+https://github.com/saad-alzion/sf-rn-slider.git"
   },
-  "author": "Saad Siddiqui <saad.siddiqui@alzionlabs.com> (https://github.com/saad-alzion)",
+  "author": "Saad Siddiqui <saad.siddiqui@studiofrontier.com> (https://github.com/saad-alzion)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/saad-alzion/sf-rn-slider/issues"
