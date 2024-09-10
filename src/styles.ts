@@ -72,7 +72,7 @@ export default StyleSheet.create({
   },
   tickerItem: {
     width: 2,
-    backgroundColor: 'royalblue',
+    // backgroundColor: 'royalblue',
   },
   centreTicker: {
     height: '60%',
@@ -81,7 +81,7 @@ export default StyleSheet.create({
     right: '50%',
     borderRadius: 10,
     position: 'absolute',
-    backgroundColor: 'royalblue',
+    // backgroundColor: 'royalblue',
   },
   scrollContainer: {
     flexDirection: 'row',
