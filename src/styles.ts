@@ -7,6 +7,7 @@ export default StyleSheet.create({
   slider: {
     // flex: 1,
     // justifyContent: 'center',
+    width: '100%',
   },
   maskedView: {
     flex: 1,

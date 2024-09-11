@@ -1,6 +1,6 @@
 {
   "name": "sf-rn-slider",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Range slider for React Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
