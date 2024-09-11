@@ -13,17 +13,22 @@ import LinearGradient from 'react-native-linear-gradient';
 
 interface Props {
   setRangeValue: (arg1: number) => void;
+  maxLength: number;
   color?: string;
-  numOfTickers?: number;
+  backgroundColor?: string;
 }
 
-export const TickerSlider = ({ setRangeValue, color, numOfTickers }: Props) => {
-  const flatListRef = useRef<FlatList>(null);
+export const TickerSlider = ({
+  setRangeValue,
+  color,
+  maxLength,
+  backgroundColor,
+}: Props) => {
   const previousScrollOffset = useRef(0); // Track the previous scroll offset
 
   const sliderRangeArray = useMemo(
-    () => Array.from({ length: numOfTickers ?? 99 }),
-    [numOfTickers]
+    () => Array.from({ length: maxLength ?? 99 }),
+    [maxLength]
   );
 
   const handleFlatlistScroll = useCallback(
@@ -47,20 +52,50 @@ export const TickerSlider = ({ setRangeValue, color, numOfTickers }: Props) => {
     [setRangeValue]
   );
 
+  if (maxLength < 20) {
+    throw new Error('Cannot be less than 20');
+  }
+
   return (
     <View style={Styles.slider}>
       <View style={Styles.sliderContainer}>
-        <View style={Styles.scrollContainer}>
+        <View
+          style={[
+            Styles.scrollContainer,
+            { backgroundColor: backgroundColor ?? 'white' },
+          ]}
+        >
           <View
             style={[
               Styles.centreTicker,
               { backgroundColor: color ?? 'royalblue' },
             ]}
           />
-          <View style={Styles.triangleTopLeft} />
-          <View style={Styles.triangleBottomLeft} />
-          <View style={Styles.triangleTopRight} />
-          <View style={Styles.triangleBottomRight} />
+          <View
+            style={[
+              Styles.triangleTopLeft,
+              { backgroundColor: backgroundColor ?? 'white' },
+            ]}
+          />
+          <View
+            style={[
+              Styles.triangleBottomLeft,
+              { backgroundColor: backgroundColor ?? 'white' },
+            ]}
+          />
+          <View
+            style={[
+              Styles.triangleTopRight,
+              { backgroundColor: backgroundColor ?? 'white' },
+            ]}
+          />
+          <View
+            style={[
+              Styles.triangleBottomRight,
+              { backgroundColor: backgroundColor ?? 'white' },
+            ]}
+          />
+
           <MaskedView
             style={Styles.maskedView}
             maskElement={
@@ -77,7 +112,6 @@ export const TickerSlider = ({ setRangeValue, color, numOfTickers }: Props) => {
           >
             <FlatList
               alwaysBounceHorizontal={false}
-              ref={flatListRef}
               onScroll={handleFlatlistScroll}
               data={sliderRangeArray}
               horizontal
