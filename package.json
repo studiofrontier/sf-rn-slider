@@ -1,6 +1,6 @@
 {
   "name": "sf-rn-slider",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Range slider for React Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -60,7 +60,8 @@
   },
   "homepage": "https://github.com/studiofrontier/sf-rn-slider#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
