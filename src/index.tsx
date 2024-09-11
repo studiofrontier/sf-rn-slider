@@ -141,12 +141,7 @@ export const RangeSlider = ({
                 return { length, offset, index };
               }}
               decelerationRate={'normal'}
-              contentContainerStyle={[
-                Styles.tickerContainer,
-                {
-                  backgroundColor: color ?? 'royalblue',
-                },
-              ]}
+              contentContainerStyle={Styles.tickerContainer}
               keyExtractor={(_, index) => index.toString()}
               renderItem={({ index }) => {
                 const TICKER_HEIGHT = index % 2 === 0 ? 40 : 28;
@@ -156,6 +151,7 @@ export const RangeSlider = ({
                       Styles.tickerItem,
                       {
                         height: TICKER_HEIGHT,
+                        backgroundColor: color ?? 'royalblue',
                       },
                     ]}
                   />
