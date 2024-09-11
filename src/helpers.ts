@@ -38,3 +38,20 @@ export const calculateAmount = (scrollOffset: number) => {
   // Ensure the final accumulated value does not fall short when scrolling to the maximum value
   return Math.round(accumulated);
 };
+
+/**
+ * @param {number} years - The number of years to convert to scroll offset
+ * @return {number} The scroll offset corresponding to the provided number of years
+ */
+export const calculateDefaultScrollOffset = (years: number): number => {
+  const yearsPerUnit = 1; // The value per unit in the slider
+  return (years / yearsPerUnit) * 10; // Assuming 10 pixels per unit
+};
+
+/**
+ * @param {number} offset - The current scroll offset of the slider
+ * @return {number} The index corresponding to the given scroll offset
+ */
+export const calculateIndexForOffset = (offset: number): number => {
+  return Math.floor(offset / 10); // 10 is the distance between the items
+};
