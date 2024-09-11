@@ -8,6 +8,26 @@ The `RangeSlider` component allows you to create a customizable, scrollable rang
 npm install sf-rn-slider
 ```
 
+or
+
+```bash
+yarn add sf-rn-slider
+```
+
+## Important
+
+This library require `raect-native-haptic-feedback` for seamless experience.
+
+```bash
+npm install react-native-haptic-feedback
+```
+
+or
+
+```bash
+yarn add react-native-haptic-feedback
+```
+
 ## Usage
 
 The `RangeSlider` component has full TypeScript support. Here's how to use it in a TypeScript project.

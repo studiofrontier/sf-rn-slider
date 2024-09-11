@@ -14,7 +14,7 @@ export const RangeSlider = ({
   onValueChange,
   color,
   backgroundColor,
-  variant = 'default',
+  variant = 'amount',
 }: RangeSliderProps) => {
   const previousScrollOffset = useRef(0); // Track the previous scroll offset
 

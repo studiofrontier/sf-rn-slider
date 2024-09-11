@@ -10,7 +10,7 @@ export interface RangeSliderProps {
    * Variant to determine the behavior of the slider.
    * - 'amount' for monetary value.
    * - 'default' for the default variant.
-   * @default 'default'
+   * @default 'amount'
    */
   variant?: 'amount' | 'default';
 
