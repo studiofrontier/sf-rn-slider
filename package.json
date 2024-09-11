@@ -66,7 +66,6 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
-    "@react-native-masked-view/masked-view": "^0.3.1",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^29.5.5",
@@ -81,8 +80,6 @@
     "react": "18.2.0",
     "react-native": "0.74.5",
     "react-native-builder-bob": "^0.30.2",
-    "react-native-haptic-feedback": "^2.3.1",
-    "react-native-linear-gradient": "^2.8.3",
     "release-it": "^15.0.0",
     "typescript": "^5.2.2"
   },
@@ -90,11 +87,8 @@
     "@types/react": "^18.2.44"
   },
   "peerDependencies": {
-    "@react-native-masked-view/masked-view": "*",
     "react": "*",
-    "react-native": "*",
-    "react-native-haptic-feedback": "*",
-    "react-native-linear-gradient": "*"
+    "react-native": "*"
   },
   "workspaces": [
     "example"
