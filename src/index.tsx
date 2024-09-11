@@ -7,24 +7,19 @@ import {
 } from 'react-native';
 import Styles from './styles';
 import { calculateAmount, calculateDefaultScrollOffset } from './helpers';
-
-interface Props {
-  onValueChange: (arg1: number) => void;
-  variant: 'amount' | 'default';
-  color?: string;
-  backgroundColor?: string;
-}
+import type { RangeSliderProps } from './types';
+import RNReactNativeHapticFeedback from 'react-native-haptic-feedback';
 
 export const RangeSlider = ({
   onValueChange,
   color,
   backgroundColor,
   variant = 'default',
-}: Props) => {
+}: RangeSliderProps) => {
   const previousScrollOffset = useRef(0); // Track the previous scroll offset
 
   const sliderRangeArray = useMemo(
-    () => Array.from({ length: variant === 'amount' ? 99 : 20 }),
+    () => Array.from({ length: variant === 'amount' ? 99 : 30 }),
     [variant]
   );
 
@@ -44,15 +39,44 @@ export const RangeSlider = ({
             const defaultValue = calculateDefaultScrollOffset(snapOffset);
             onValueChange(defaultValue);
           }
-          // ReactNativeHapticFeedback.trigger('impactLight', {
-          //   ignoreAndroidSystemSettings: true,
-          //   enableVibrateFallback: true,
-          // });
+          RNReactNativeHapticFeedback.trigger('impactLight', {
+            ignoreAndroidSystemSettings: true,
+            enableVibrateFallback: true,
+          });
         }
       }
     },
     [onValueChange, variant]
   );
+
+  // const renderCornerTriangles = () => (
+  //   <>
+  //     <View
+  //       style={[
+  //         Styles.triangleTopLeft,
+  //         { backgroundColor: backgroundColor ?? 'white' },
+  //       ]}
+  //     />
+  //     <View
+  //       style={[
+  //         Styles.triangleBottomLeft,
+  //         { backgroundColor: backgroundColor ?? 'white' },
+  //       ]}
+  //     />
+  //     <View
+  //       style={[
+  //         Styles.triangleTopRight,
+  //         { backgroundColor: backgroundColor ?? 'white' },
+  //       ]}
+  //     />
+  //     <View
+  //       style={[
+  //         Styles.triangleBottomRight,
+  //         { backgroundColor: backgroundColor ?? 'white' },
+  //       ]}
+  //     />
+  //   </>
+  // );
 
   return (
     <View style={Styles.slider}>
@@ -69,31 +93,6 @@ export const RangeSlider = ({
               { backgroundColor: color ?? 'royalblue' },
             ]}
           />
-          <View
-            style={[
-              Styles.triangleTopLeft,
-              { backgroundColor: backgroundColor ?? 'white' },
-            ]}
-          />
-          <View
-            style={[
-              Styles.triangleBottomLeft,
-              { backgroundColor: backgroundColor ?? 'white' },
-            ]}
-          />
-          <View
-            style={[
-              Styles.triangleTopRight,
-              { backgroundColor: backgroundColor ?? 'white' },
-            ]}
-          />
-          <View
-            style={[
-              Styles.triangleBottomRight,
-              { backgroundColor: backgroundColor ?? 'white' },
-            ]}
-          />
-
           <FlatList
             alwaysBounceHorizontal={false}
             onScroll={handleFlatlistScroll}

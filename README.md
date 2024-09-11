@@ -1,24 +1,61 @@
-# sf-rn-slider
+# RangeSlider Component
 
-High performant Range slider for Android and iOS ⚡️
+The `RangeSlider` component allows you to create a customizable, scrollable range selector. It supports both "amount" and "default" variants and comes with a dynamic snapping mechanism.
 
 ## Installation
 
-```sh
+```bash
 npm install sf-rn-slider
 ```
 
 ## Usage
 
+The `RangeSlider` component has full TypeScript support. Here's how to use it in a TypeScript project.
 
-```js
-import { multiply } from 'sf-rn-slider';
+```tsx
+import React, { useState } from 'react';
+import { View, Text, StatusBar, StyleSheet } from 'react-native';
+import { RangeSlider } from 'sf-rn-slider';
 
-// ...
+export default function App() {
+  const [sliderValue, setSliderValue] = useState<number>(0);
 
-const result = await multiply(3, 7);
+  return (
+    <View style={styles.main}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
+      <Text style={styles.text}>${sliderValue.toLocaleString()}</Text>
+      <RangeSlider
+        onValueChange={setSliderValue}
+        color="royalblue"
+        variant="amount"
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
 ```
 
+## RangeSlider Props
+
+| Prop                  | Type                      | Optional | Default       | Description                                                                                                                               |
+| --------------------- | ------------------------- | -------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `onValueChange`       | `(value: number) => void` | No       |               | A callback function that is triggered when the value changes. It passes the calculated value based on scroll offset.                      |
+| `variant`             | `'amount' \| 'default'`   | Yes      | `'default'`   | Variant to determine the behavior of the slider. - 'amount' for monetary value. - 'default' for the default variant.                      |
+| `color`               | `string`                  | Yes      | `'royalblue'` | The color of the center ticker.                                                                                                           |
+| `backgroundColor`     | `string`                  | Yes      | `'white'`     | Background color of the slider container.                                                                                                 |
+| `initialScrollOffset` | `number`                  | Yes      | `0`           | The initial scroll offset for the slider. The offset should be a multiple of 10. For example, `initialScrollOffset = 30` means index = 3. |
 
 ## Contributing
 

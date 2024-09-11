@@ -1,6 +1,6 @@
 {
   "name": "sf-rn-slider",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Range slider for React Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -80,6 +80,7 @@
     "react": "18.2.0",
     "react-native": "0.74.5",
     "react-native-builder-bob": "^0.30.2",
+    "react-native-haptic-feedback": "^2.3.1",
     "release-it": "^15.0.0",
     "typescript": "^5.2.2"
   },
@@ -88,7 +89,8 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-haptic-feedback": "^2.3.1"
   },
   "workspaces": [
     "example"

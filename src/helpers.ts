@@ -40,12 +40,12 @@ export const calculateAmount = (scrollOffset: number) => {
 };
 
 /**
- * @param {number} years - The number of years to convert to scroll offset
+ * @param {number} offset - The number of years to convert to scroll offset
  * @return {number} The scroll offset corresponding to the provided number of years
  */
-export const calculateDefaultScrollOffset = (years: number): number => {
-  const yearsPerUnit = 1; // The value per unit in the slider
-  return (years / yearsPerUnit) * 10; // Assuming 10 pixels per unit
+export const calculateDefaultScrollOffset = (offset: number): number => {
+  const offsetPerUnit = 1; // The value per unit in the slider
+  return (offset / offsetPerUnit) * 10; // Assuming 10 pixels per unit
 };
 
 /**
