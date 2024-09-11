@@ -18,7 +18,7 @@ interface Props {
   backgroundColor?: string;
 }
 
-export const TickerSlider = ({
+export const RangeSlider = ({
   setRangeValue,
   color,
   maxLength,
